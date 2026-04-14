@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg: #0A0A0A;
+    --surface: #141414;
+    --border: #2A2A2A;
+    --text-primary: #F5F5F5;
+    --text-muted: #71717A;
+    --green: #22C55E;
+    --orange: #F97316;
+    --red: #EF4444;
+
+    --font-display: 'Clash Display', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    
+    color: var(--text-primary);
+    background-color: var(--bg);
+    font-family: var(--font-body);
+  }
+}
+
+@theme {
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-text-primary: var(--text-primary);
+  --color-text-muted: var(--text-muted);
+  --color-green: var(--green);
+  --color-orange: var(--orange);
+  --color-red: var(--red);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* Animations */
+@layer utilities {
+  .animate-score-fill {
+    transition: stroke-dashoffset 1s ease-out;
+  }
+}
