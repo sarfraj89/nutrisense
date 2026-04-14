@@ -5,19 +5,19 @@ export default function HabitsPage() {
   const [meals, setMeals] = useState<MealEntry[]>([]);
   const [loading, setLoading] = useState(true);
 
-  if (loading) {
-    return <div className="max-w-2xl mx-auto py-20 text-center text-text-muted">Loading habits data...</div>;
-  }
-
   useEffect(() => {
     const fetchMeals = async () => {
       setLoading(true);
       const data = await getMeals();
-      setMeals(data);
+      setMeals(data || []);
       setLoading(false);
     };
     fetchMeals();
   }, []);
+
+  if (loading) {
+    return <div className="max-w-2xl mx-auto py-20 text-center text-text-muted">Loading habits data...</div>;
+  }
 
   const getWeekScores = () => {
     const days = [];
